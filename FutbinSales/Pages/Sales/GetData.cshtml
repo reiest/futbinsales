@@ -1,0 +1,33 @@
+@page
+@model FutbinSales.Pages.dummy.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                @if (Model.getData)
+                {
+                    <input type="submit" value="Get data" class="btn btn-primary"/>
+                }
+                else
+                {
+                    <p>Data last updated: @Model.lastSaleDate</p>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+

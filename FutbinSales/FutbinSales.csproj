@@ -15,7 +15,6 @@
 
     <ItemGroup>
       <Folder Include="Core\Players\Pipelines" />
-      <Folder Include="Core\Players\Services" />
     </ItemGroup>
 
     <ItemGroup>

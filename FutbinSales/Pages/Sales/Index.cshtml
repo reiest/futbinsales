@@ -1,0 +1,91 @@
+@page
+@model FutbinSales.Pages.Sales.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<div class="form-group">
+    <label for="search">Search:</label>
+    <input type="text" id="search" class="form-control" placeholder="Search by player name">
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].avgPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].minPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].maxPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].salesCount)
+        </th>
+        <th>
+            90% int
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Player) {
+        <tr class="player-row">
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.avgPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.minPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maxPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salesCount)
+            </td>
+            <td>
+                [@Html.DisplayFor(modelItem => item.trimmedLowPrice)
+                , @Html.DisplayFor(modelItem => item.trimmedMaxPrice)]
+            </td>
+            <td>
+                <a asp-page="./GetData" asp-route-id="@item.Id">Refresh data</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $("#search").on("keyup", function () {
+            var searchText = $(this).val().toLowerCase();
+            $(".player-row").each(function () {
+                var playerName = $(this).find("td:eq(1)").text().toLowerCase(); // Assuming player name is in the second column
+                if (playerName.indexOf(searchText) === -1) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
