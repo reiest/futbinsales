@@ -1,4 +1,12 @@
+using FutbinSales.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SalesContext>(options =>
+{
+    options.UseSqlite($"Data Source={Path.Combine("Data", "sales.db")}");
+});
 
 // Add services to the container.
 builder.Services.AddRazorPages();
