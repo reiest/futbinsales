@@ -18,78 +18,89 @@
     <label for="search">Search:</label>
     <input type="text" id="search" class="form-control" placeholder="Search by player name">
 </div>
-@* <div class="form-group"> *@
-@*     <label for="category" class="control-label"></label> *@
-@*     <select class="form-control" asp-items="ViewBag.CategoryId"></select> *@
-@* </div> *@
+<div class="form-group">
+    <label for="category" class="control-label"></label>
+    <select class="form-control" asp-items="ViewBag.CategoryId"></select>
+</div>
 
 
 <table class="table">
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Player[0].Id)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Player[0].Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Player[0].avgPrice)
+            @Html.DisplayNameFor(model => model.Player[0].buyPrice)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Player[0].minPrice)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Player[0].avgPrice)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Player[0].maxPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].trend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].mostSalesInterval)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].salesOverAvg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].medianPerThird)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].dataFromLastXHours)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Player[0].salesCount)
         </th>
-        <th>
-            90% int
-        </th>
         <th></th>
-        <th>
-            @Html.DisplayNameFor(model => model.Player[0].Category)
-        </th>
     </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Player) {
         <tr class="player-row">
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.avgPrice)
+                @Html.DisplayFor(modelItem => item.buyPrice)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.minPrice)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.avgPrice)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.maxPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trend)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mostSalesInterval)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salesOverAvg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.medianPerThird)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataFromLastXHours)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.salesCount)
             </td>
             <td>
-                [@Html.DisplayFor(modelItem => item.trimmedLowPrice)
-                , @Html.DisplayFor(modelItem => item.trimmedMaxPrice)]
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dataFromLastXHours)
-            </td>
-            @* <td> *@
-            @*                 @Html.DisplayFor(modelItem => item.modePrice) *@
-            @* </td> *@
-            <td>
                 <a asp-page="./GetData" asp-route-id="@item.Id">Refresh data</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
         </tr>
 }

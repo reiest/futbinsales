@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x7WR0y0wy/6sj+W75fgbn0kEVvW1BSdyN0y5pT88jQ5XOsRH97oY8Wygzc4jiV58yEaNs4x0W0dgxA8AFeygeA==",
+  "dgSpecHash": "hHhuMS5f+sRT4wBMGP+2BgL9K+EBp8Twd3SZAgsuhxDqnrnN84GGGT9/jZl6UfvXYDZ6e/foLD08+ktDvdmPvA==",
   "success": true,
   "projectFilePath": "/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/FutbinSales.csproj",
   "expectedPackageFiles": [
@@ -158,6 +158,7 @@
     "/Users/semreiestad/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/system.collections.concurrent/4.3.0/system.collections.concurrent.4.3.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
+    "/Users/semreiestad/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/system.composition/6.0.0/system.composition.6.0.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/system.composition.attributedmodel/6.0.0/system.composition.attributedmodel.6.0.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/system.composition.convention/6.0.0/system.composition.convention.6.0.0.nupkg.sha512",

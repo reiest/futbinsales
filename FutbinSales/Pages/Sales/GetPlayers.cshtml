@@ -1,0 +1,37 @@
+@page
+@model FutbinSales.Pages.Sales.GetPlayersModel
+
+@{
+    ViewData["Title"] = "GetPlayers";
+}
+
+<h1>GetPlayers</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div>
+                <label asp-for="url">URL:</label>
+                <input asp-for="url" class="form-control" />
+            </div>
+            
+            <div>
+                <label asp-for="categoryName">Category Name:</label>
+                <input asp-for="categoryName" class="form-control" />
+            </div>
+        
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </form>
+        @if (Model.loading)
+        {
+            <h1>Loading... please wait</h1>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
