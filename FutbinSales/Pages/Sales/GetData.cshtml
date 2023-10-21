@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Update sales</h1>
 
-<h4>Sale</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,7 +19,7 @@
                 }
                 else
                 {
-                    <p>Data last updated: @Model.lastSaleDate</p>
+                    <p>Too soon, can not fetch new data. Data last updated: @Model.lastSaleDate</p>
                 }
             </div>
         </form>

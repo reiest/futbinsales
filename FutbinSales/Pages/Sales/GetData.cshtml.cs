@@ -26,18 +26,25 @@ namespace FutbinSales.Pages.dummy
         [BindProperty]
         public DateTime lastSaleDate { get; set; }
         
-        public IActionResult OnGet(int id)
+        public async Task<IActionResult> OnGet(int id)
         {
-        ViewData["PlayerId"] = new SelectList(_context.Players, "Id", "Id");
-        if (_context.Sales.Where(s => s.PlayerId == id).Any())
+            ViewData["PlayerId"] = new SelectList(_context.Players, "Id", "Id");
+            if (_context.Sales.Where(s => s.PlayerId == id).Any())
             {
-                lastSaleDate = _context.Sales.Where(s => s.PlayerId == id).OrderByDescending(s => s.SaleDate).FirstOrDefault().SaleDate;
+                lastSaleDate = _context.Sales.Where(s => s.PlayerId == id).OrderByDescending(s => s.SaleDate)
+                    .FirstOrDefault().SaleDate;
             }
-            
-            if (lastSaleDate > DateTime.Now.AddHours(-3))
+            else
             {
-                getData = false;
+                lastSaleDate = DateTime.Now.AddHours(-5);
             }
+            if (lastSaleDate < DateTime.Now.AddHours(-4))
+            {
+                await _salesService.ScrapeDataAsync(id); 
+                return RedirectToPage("./Index");
+            }
+            getData = false;
+
             return Page();
         }
 

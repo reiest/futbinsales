@@ -10,6 +10,7 @@ public class SalesContext : DbContext
     
     public DbSet<Player> Players { get; set; } = null!;
     public DbSet<Sale> Sales { get; set; } = null!;
+    public DbSet<Category> Categories { get; set; } = null!;
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

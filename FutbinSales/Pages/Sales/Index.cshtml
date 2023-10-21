@@ -6,15 +6,24 @@
 }
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<h1>Index</h1>
+<h1>Player's sale data</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
+</p>
+<p>
+    <a asp-page="GetPlayers">Get players</a>
 </p>
 <div class="form-group">
     <label for="search">Search:</label>
     <input type="text" id="search" class="form-control" placeholder="Search by player name">
 </div>
+@* <div class="form-group"> *@
+@*     <label for="category" class="control-label"></label> *@
+@*     <select class="form-control" asp-items="ViewBag.CategoryId"></select> *@
+@* </div> *@
+
+
 <table class="table">
     <thead>
     <tr>
@@ -40,6 +49,9 @@
             90% int
         </th>
         <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Player[0].Category)
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -68,7 +80,16 @@
                 , @Html.DisplayFor(modelItem => item.trimmedMaxPrice)]
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.dataFromLastXHours)
+            </td>
+            @* <td> *@
+            @*                 @Html.DisplayFor(modelItem => item.modePrice) *@
+            @* </td> *@
+            <td>
                 <a asp-page="./GetData" asp-route-id="@item.Id">Refresh data</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
         </tr>
 }
@@ -76,16 +97,23 @@
 </table>
 <script>
     $(document).ready(function () {
-        $("#search").on("keyup", function () {
-            var searchText = $(this).val().toLowerCase();
+        $("#search, #category").on("keyup", function () {
+            var searchText = $("#search").val().toLowerCase();
+            // var categoryFilter = $("#category").val();
+            // console.log(categoryFilter);
+            
             $(".player-row").each(function () {
                 var playerName = $(this).find("td:eq(1)").text().toLowerCase(); // Assuming player name is in the second column
-                if (playerName.indexOf(searchText) === -1) {
-                    $(this).hide();
-                } else {
+                // var playerCategory = $(this).find("td:eq(-1)").text(); 
+                 var shouldShow = playerName.indexOf(searchText) !== -1 // && (categoryFilter === "" || playerCategory.indexOf(categoryFilter) !== -1);
+
+                if (shouldShow) {
                     $(this).show();
+                } else {
+                    $(this).hide();
                 }
             });
         });
     });
+
 </script>

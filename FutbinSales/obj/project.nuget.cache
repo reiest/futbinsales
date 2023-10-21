@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Mbb85h3PeSbAqXOROQDP9dlEgS5tvTtx7PGYJsvNKuQMdRe4Sjn/hMC+w+ZpJlIL20gkat9D+vzRzxs4MxoN1g==",
+  "dgSpecHash": "x7WR0y0wy/6sj+W75fgbn0kEVvW1BSdyN0y5pT88jQ5XOsRH97oY8Wygzc4jiV58yEaNs4x0W0dgxA8AFeygeA==",
   "success": true,
   "projectFilePath": "/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/FutbinSales.csproj",
   "expectedPackageFiles": [
     "/Users/semreiestad/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/Users/semreiestad/.nuget/packages/htmlagilitypack/1.11.54/htmlagilitypack.1.11.54.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/semreiestad/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",

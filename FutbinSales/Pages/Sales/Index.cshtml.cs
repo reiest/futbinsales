@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FutbinSales.Core.Players;
 using FutbinSales.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FutbinSales.Pages.Sales
 {
@@ -25,6 +26,8 @@ namespace FutbinSales.Pages.Sales
         {
             if (_context.Players != null)
             {
+                ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
+                
                 Player = await _context.Players.Include(p => p.Sales).ToListAsync();
             }
         }

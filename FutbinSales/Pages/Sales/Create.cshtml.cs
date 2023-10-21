@@ -21,25 +21,23 @@ namespace FutbinSales.Pages.Sales
 
         public IActionResult OnGet()
         {
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return Page();
         }
 
         [BindProperty]
-        public Player Player { get; set; } = default!;
-        
+        public Player Player { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Players == null || Player == null)
-            {
-                return Page();
-            }
+          if (!ModelState.IsValid)
+          {
+              return Page();
+          }
+          _context.Players.Add(Player);
+          await _context.SaveChangesAsync();
 
-            _context.Players.Add(Player);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+          return RedirectToPage("./Index");
         }
     }
 }

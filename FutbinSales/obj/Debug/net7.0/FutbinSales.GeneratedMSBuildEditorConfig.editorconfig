@@ -32,12 +32,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvRGVsZXRlLmNzaHRtbA==
+[/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvRGV0YWlscy5jc2h0bWw=
+[/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/Edit.cshtml]
@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/GetData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvR2V0RGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/GetPlayers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2FsZXMvR2V0UGxheWVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/semreiestad/Documents/FutbinApp/FutbinSales/FutbinSales/Pages/Sales/Index.cshtml]
